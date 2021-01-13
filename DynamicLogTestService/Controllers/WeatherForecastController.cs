@@ -26,7 +26,6 @@ namespace DynamicLogTestService.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            _logger.LogInformation($"Pod ip: {Environment.GetEnvironmentVariable(Names.EnvName)}");
             _logger.LogInformation("Marcin Info");
             _logger.LogDebug("Marcin Debug");
             
