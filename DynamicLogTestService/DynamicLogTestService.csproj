@@ -4,10 +4,5 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
-    <ItemGroup>
-      <PackageReference Include="Steeltoe.Extensions.Logging.DynamicLogger" Version="3.0.2" />
-      <PackageReference Include="Steeltoe.Management.EndpointCore" Version="3.0.2" />
-    </ItemGroup>
-
 
 </Project>

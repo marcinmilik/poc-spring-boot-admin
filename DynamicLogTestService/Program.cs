@@ -23,11 +23,6 @@ namespace DynamicLogTestService
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>()
-                        .ConfigureLogging((c, lb) =>
-                        {
-                            lb.AddConsole();
-                            lb.AddDynamicConsole();
-                        })
                         .UseKestrel();
                 });
         }
