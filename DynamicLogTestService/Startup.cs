@@ -23,11 +23,8 @@ namespace DynamicLogTestService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            
-            services.AddInfoActuator(Configuration);
-            services.AddHealthActuator(Configuration);
-            services.AddLoggersActuator(Configuration);
-            services.AddHypermediaActuator(Configuration);
+
+            services.AddAllActuators();
             
             services.AddMvc();
             
@@ -44,12 +41,8 @@ namespace DynamicLogTestService
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapAllActuators();
                 endpoints.MapControllers();
-                
-                endpoints.Map<InfoEndpoint>();
-                endpoints.Map<HealthEndpoint>();
-                endpoints.Map<LoggersEndpoint>();
-                endpoints.Map<ActuatorEndpoint>();
             });
         }
     }
