@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mytest
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mytest
+  template:
+    metadata:
+      labels:
+        app: mytest
+    spec:
+      containers:
+        - name: mytest
+          image: dockerlogtestservice
+          imagePullPolicy: Never          
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mytest
+  labels:
+    app: mytest
+    spring-boot: "true"
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+  selector:
+    app: mytest
