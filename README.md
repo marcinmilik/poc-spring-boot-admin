@@ -1,7 +1,10 @@
 
 1. Prepare namespaces in k8
+
 kubectl create namespace application-world
+
 kubectl create namespace administration-world
+
 2. cd DynamicLogTestService
 3. docker build . -t dockerlogtestservice
 4. cd ../SpringBootAdmin
