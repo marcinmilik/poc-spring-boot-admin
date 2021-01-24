@@ -1,10 +1,14 @@
-1. cd DynamicLogTestService
-2. docker build . -t dockerlogtestservice
-3. cd ../SpringBootAdmin
-4. docker build . -t admin-server
-5. cd ..
-6. kubectl apply -f .\dynamic-log-test-service.yaml
-7. kubectl apply -f .\spring-boot-admin.yaml
+
+1. Prepare namespaces in k8
+kubectl create namespace application-world
+kubectl create namespace administration-world
+2. cd DynamicLogTestService
+3. docker build . -t dockerlogtestservice
+4. cd ../SpringBootAdmin
+5. docker build . -t admin-server
+6. cd ..
+7. kubectl apply -f .\dynamic-log-test-service.yaml
+8. kubectl apply -f .\spring-boot-admin.yaml
 
 
 If you'd like to call endpoint from dockerlogtestservice you can create role binding (do only for development purpose):

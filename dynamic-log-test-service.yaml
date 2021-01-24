@@ -1,33 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mytest
-  namespace: default
+  name: super-important-app
+  namespace: application-world
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: mytest
+      app: super-important-app
   template:
     metadata:
       labels:
-        app: mytest
+        app: super-important-app
     spec:
       containers:
-        - name: mytest
+        - name: super-important-app
           image: dockerlogtestservice
           imagePullPolicy: Never          
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: mytest
+  name: super-important-app
+  namespace: application-world
   labels:
-    app: mytest
+    app: super-important-app
     spring-boot: "true"
 spec:
   ports:
     - port: 80
       protocol: TCP
   selector:
-    app: mytest
+    app: super-important-app
